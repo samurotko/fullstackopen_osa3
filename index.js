@@ -99,10 +99,7 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :d
   
     response.status(204).end()
   })
-  
-  
 
-  
   const PORT = process.env.PORT || 3001
   app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
