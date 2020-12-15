@@ -1,0 +1,8 @@
+POST http://localhost:3001/api/persons
+content-type: application/json
+
+{
+    "name": "Art Hellas",
+    "number": "404",
+    "id": 99
+}
