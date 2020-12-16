@@ -11,7 +11,8 @@
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
     "logs:prod": "heroku logs --tail",
-    "remove:build": "rimraf build"
+    "remove:build": "rimraf build",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "rimraf": "^3.0.2"
   },
   "devDependencies": {
+    "eslint": "^7.15.0",
     "nodemon": "^2.0.6"
   }
 }
