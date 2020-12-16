@@ -6,7 +6,11 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \\\"Error: no test specified\\\" && exit 1"
+    "test": "echo \\\"Error: no test specified\\\" && exit 1",
+    "build:ui": "rimraf build && cd ../fullstackopen/osa 2/puhelinluettelo && npm run build --prod && ncp build ../../../fullstack_osa3",
+    "deploy": "git push heroku main",
+    "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
+    "logs:prod": "heroku logs --tail"
   },
   "repository": {
     "type": "git",
@@ -20,8 +24,12 @@
   "homepage": "https://github.com/samurotko/fullstack_osa3#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "morgan": "^1.10.0"
+    "mongoose": "^5.11.8",
+    "morgan": "^1.10.0",
+    "ncp": "^2.0.0",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
