@@ -9,7 +9,7 @@ const url = process.env.MONGODB_URI
 
 //const password = process.argv[2]
 
-console.log('connecting to', url)
+console.log('connecting to', url, typeof url)
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false, useCreateIndex: true })
   .then(result => {
     console.log('connected to MongoDB')

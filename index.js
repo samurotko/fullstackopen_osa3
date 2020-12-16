@@ -45,7 +45,9 @@ app.use(morgan(':method :url :status :res[content-length] - :response-time ms :d
 
 
   app.get('/', (req, res) => {
-    res.send('<h1>fuck!</h1>')
+    Person.find({}).then(persons => {
+      res.json(persons)
+    })
   })
   
   app.get('/api/persons', (req, res) => {
