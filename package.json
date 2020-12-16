@@ -10,7 +10,8 @@
     "build:ui": "rimraf build && cd ../fullstackopen/osa 2/puhelinluettelo && npm run build --prod && ncp build ../../../fullstack_osa3",
     "deploy": "git push heroku main",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && git push && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "remove:build": "rimraf build"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.11.8",
+    "mongoose-unique-validator": "^2.0.3",
     "morgan": "^1.10.0",
     "ncp": "^2.0.0",
     "rimraf": "^3.0.2"
